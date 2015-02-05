@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a86473-40de-4c07-81b5-3bf8ce4039f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityUseInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityInterface.java" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityInterface.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Use.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityUseInterface.java" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityUseInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FacilityManagementSystem.iws" />
@@ -53,17 +52,27 @@
       <file leaf-file-name="FacilityUseInterface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityUseInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="340">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Use.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/src/main/java/FacilitySystem/Use.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5538847" vertical-offset="34" max-vertical-offset="561">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/src/main/java/FacilitySystem/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6817043" vertical-offset="51" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="510">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#241#242#0" expanded="true" />
@@ -87,8 +96,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Facility.java" />
         <option value="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityInterface.java" />
-        <option value="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityUseInterface.java" />
         <option value="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Person.java" />
+        <option value="$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityUseInterface.java" />
+        <option value="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Use.java" />
       </list>
     </option>
   </component>
@@ -458,6 +468,13 @@
       <option name="number" value="Default" />
       <updated>1423098888425</updated>
     </task>
+    <task id="LOCAL-00001" summary="added person class">
+      <created>1423162866732</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1423162866732</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -467,6 +484,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -504,6 +522,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="added person class" />
+    <option name="LAST_COMMIT_MESSAGE" value="added person class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -552,15 +572,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/main/java/FacilitySystem/FacilityUseInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.84" vertical-offset="0" max-vertical-offset="340">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/src/main/java/FacilitySystem/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6817043" vertical-offset="51" max-vertical-offset="510">
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="510">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#241#242#0" expanded="true" />
@@ -570,6 +590,14 @@
             <element signature="e#362#363#0" expanded="true" />
             <element signature="e#388#389#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/src/main/java/FacilitySystem/Use.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5538847" vertical-offset="34" max-vertical-offset="561">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

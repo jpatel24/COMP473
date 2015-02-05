@@ -16,4 +16,6 @@ public interface FacilityInterface {
     public abstract void removeFacility(int facilityId);
 
     public abstract void addNewFacility(Facility facility);
+
+
 }

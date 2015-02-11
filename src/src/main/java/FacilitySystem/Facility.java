@@ -1,6 +1,7 @@
 package src.main.java.FacilitySystem;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by Jeel on 2/4/15.
@@ -10,12 +11,12 @@ public class Facility implements FacilityInterface {
     private int capacity;
     private List<Use> facilityUse;
     private String description;
-    private List<MaintenanceRequest> facilityMaintReq;
+    private List<MaintenanceRequest> maintenanceRequestList;
     private boolean vacant;
     private float cost;
     private Facility parentFacilityId;
     private List<Facility> list;
-    private List<FacilityProblems> facProblems;
+    private List<FacilityProblems> facilityProblemsList;
     private Person owner;
     private Person renter;
 
@@ -32,12 +33,12 @@ public class Facility implements FacilityInterface {
 
     }
 
-    public List<MaintenanceRequest>getFacilityMaintReq(){
-        return facilityMaintReq;
+    public List<MaintenanceRequest> getMaintenanceRequestList(){
+        return maintenanceRequestList;
     }
 
-    public void setFacilityMaintReq(List<MaintenanceRequest> fmr){
-        this.facilityMaintReq = fmr;
+    public void setMaintenanceRequestList(List<MaintenanceRequest> fmr){
+        this.maintenanceRequestList = fmr;
     }
 
     public List<Facility> listFacilities() {
@@ -92,7 +93,7 @@ public class Facility implements FacilityInterface {
     }
 
     public void addMaintenanceRequest(MaintenanceRequest mr){
-        facilityMaintReq.add(mr);
+        maintenanceRequestList.add(mr);
     }
 
 
@@ -148,16 +149,16 @@ public class Facility implements FacilityInterface {
         list.add(facility);
     }
 
-    public List<FacilityProblems> getFacProblems() {
-        return facProblems;
+    public List<FacilityProblems> getFacilityProblemsList() {
+        return facilityProblemsList;
     }
 
-    public void setFacProblems(List<FacilityProblems> facProblems) {
-        this.facProblems = facProblems;
+    public void setFacilityProblemsList(List<FacilityProblems> facilityProblemsList) {
+        this.facilityProblemsList = facilityProblemsList;
     }
 
     public void addFacProblem(FacilityProblems fp){
-        facProblems.add(fp);
+        facilityProblemsList.add(fp);
     }
 
     public Person getOwner() {

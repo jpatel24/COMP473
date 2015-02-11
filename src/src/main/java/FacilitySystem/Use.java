@@ -1,25 +1,53 @@
 package src.main.java.FacilitySystem;
-import java.util
-import java.util.Calendar;*;
+import java.util.Calendar;
 /**
  * Created by Ti on 2/5/2015.
  */
 public class Use {
-    private int Id;
-    private Calendar startDate;
-    private Calendar endDate;
+    private Calendar StartDate;
+    private Calendar EndDate;
+    private String useDescription;
+    private int id;
     private Facility facility;
 
-    public int getId{
-        return Id;
+    public Facility getFacility(){
+        return facility;
     }
 
-    public Calendar getStartDate{
-        return startDate;
+    public void setFacility(Facility facility){
+        this.facility=facility;
     }
 
-    public Calendar getEndDate{
-        return endDate;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Calendar getStartDate() {
+        return StartDate;
+    }
+
+    public void setStartDate(Calendar startDate) {
+        StartDate = startDate;
+    }
+
+    public Calendar getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(Calendar endDate) {
+        EndDate = endDate;
+    }
+
+    public String getUseDescription() {
+        return useDescription;
+    }
+
+    public void setUseDescription(String useDescription) {
+        this.useDescription = useDescription;
     }
 
 

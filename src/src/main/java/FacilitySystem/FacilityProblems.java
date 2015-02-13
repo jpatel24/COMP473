@@ -5,6 +5,7 @@ import java.util.Calendar;
 
 /**
  * Created by Jeel on 2/9/15.
+ * Helper class to define a facility problem with a basic description.
  */
 public class FacilityProblems {
     private int id;

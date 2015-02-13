@@ -6,7 +6,7 @@ import java.util.*;
  */
 public interface FacilityMaintenanceInterface {
 
-    public void makeFacilityMaintRequest(MaintenanceRequest mr, Facility f);
+    public void makeFacilityMaintRequest(MaintenanceRequest maintenanceRequest, Facility facility);
 
     public List<MaintenanceRequest> listMaintRequests(Facility facility);
 
@@ -20,5 +20,5 @@ public interface FacilityMaintenanceInterface {
 
     public float calcDownTimeForFacility(Facility facility);
 
-    public void scheduleMaintenance(Maintenance m, MaintenanceRequest mr);
+    public void scheduleMaintenance(Maintenance maintenance, MaintenanceRequest maintenanceRequest);
 }

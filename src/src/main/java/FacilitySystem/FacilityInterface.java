@@ -11,7 +11,7 @@ public interface FacilityInterface {
 
     public abstract int requestAvailableCapacity();
 
-    public abstract List<? extends FacilityInterface> listFacilities();
+    public abstract List<Facility> listFacilities();
 
     public abstract void removeFacility(int facilityId);
 

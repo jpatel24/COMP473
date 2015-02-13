@@ -2,6 +2,8 @@ package src.main.java.FacilitySystem;
 import java.util.*;
 /**
  * Created by Ti on 2/5/2015.
+ *
+ * Helper class to define a person. list of facilities owned or rented.
  */
 public class Person {
 

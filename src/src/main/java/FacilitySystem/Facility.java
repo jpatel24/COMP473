@@ -5,6 +5,10 @@ import java.util.List;
 
 /**
  * Created by Jeel on 2/4/15.
+ *
+ * This class implements the interface methods given to us. In general, it has basic methods and variables that can be assigned
+ * to a facility. We have a list of facilityUse, maintenanaceRequestList, list of different facilities, and the problems.
+ * Also, we have people who either own the facility or rented it.
  */
 public class Facility implements FacilityInterface {
     private int id;
@@ -14,11 +18,15 @@ public class Facility implements FacilityInterface {
     private List<MaintenanceRequest> maintenanceRequestList;
     private boolean vacant;
     private float cost;
-    private Facility parentFacilityId;
+    private Facility facilityId;
     private List<Facility> list;
     private List<FacilityProblems> facilityProblemsList;
     private Person owner;
     private Person renter;
+
+    public Facility()
+    {
+    }
 
 
     public void addFacilityDetail(boolean vacant, float cost, String description) {
@@ -56,19 +64,14 @@ public class Facility implements FacilityInterface {
 
     public void removeFacility(int facilityId) {
         Iterator<Facility>i = list.iterator();
-        int j = 0;
         while (i.hasNext()){
             Facility f = i.next();
             if(f.getId() == facilityId){
-                list.remove(j);
+                list.remove(f);
             }
-            j++;
+
         }
 
-    }
-
-    public Facility()
-    {
     }
 
     public int getId()
@@ -83,8 +86,8 @@ public class Facility implements FacilityInterface {
         return facilityUse;
     }
 
-    public void setFacilityUse(List<Use> fu){
-        this.facilityUse=fu;
+    public void setFacilityUse(List<Use> facilityUse){
+        this.facilityUse=facilityUse;
     }
 
     public void addUse(Use use){
@@ -92,8 +95,8 @@ public class Facility implements FacilityInterface {
         use.setFacility(this);
     }
 
-    public void addMaintenanceRequest(MaintenanceRequest mr){
-        maintenanceRequestList.add(mr);
+    public void addMaintenanceRequest(MaintenanceRequest maintenanceRequest){
+        maintenanceRequestList.add(maintenanceRequest);
     }
 
 
@@ -125,7 +128,7 @@ public class Facility implements FacilityInterface {
 
     @Override
     public String getFacilityInformation() {
-        return ("Facility Information - " + "ID: " + id + " Parent ID: " + parentFacilityId + " Cost: " + cost + " Vacant: " + vacant + " Description: "+ description + " Owner: " + owner.getFirstName());
+        return ("Facility Information - " + "ID: " + id + " Facility ID: " + facilityId + " Cost: " + cost + " Vacant: " + vacant + " Description: "+ description + " Owner: " + owner.getFirstName());
     }
 
     @Override
@@ -135,12 +138,12 @@ public class Facility implements FacilityInterface {
 
 
 
-    public Facility getParentFacilityId() {
-        return parentFacilityId;
+    public Facility getFacilityId() {
+        return facilityId;
     }
 
-    public void setParentFacilityId(Facility parentFacilityId) {
-        this.parentFacilityId = parentFacilityId;
+    public void setFacilityId(Facility facilityId) {
+        this.facilityId = facilityId;
     }
 
     @Override
@@ -157,8 +160,8 @@ public class Facility implements FacilityInterface {
         this.facilityProblemsList = facilityProblemsList;
     }
 
-    public void addFacProblem(FacilityProblems fp){
-        facilityProblemsList.add(fp);
+    public void addFacilityProblem(FacilityProblems facilityProblems){
+        facilityProblemsList.add(facilityProblems);
     }
 
     public Person getOwner() {

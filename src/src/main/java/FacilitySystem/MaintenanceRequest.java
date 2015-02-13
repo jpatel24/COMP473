@@ -29,8 +29,8 @@ public class MaintenanceRequest {
     }
 
     public double calMaintenanceCostForFacility() {
-        int max = 1500;
-        int min = 50;
+        int max = 2000;
+        int min = 10;
 
         Random r = new Random();
         estCost = min + (max - min) * r.nextDouble();

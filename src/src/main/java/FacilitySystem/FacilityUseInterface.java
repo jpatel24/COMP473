@@ -10,6 +10,6 @@ public interface FacilityUseInterface {
      public void vacateFacility(Facility facility);
      public List<Use> listInspections(Facility facility);
      public List<Use> listActualUsage(Facility facility);
-     public int calcUsageRate(Facility facility);
+     public float calcUsageRate(Facility facility);
 
 }

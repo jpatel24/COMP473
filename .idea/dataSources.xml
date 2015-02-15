@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2218803938">
+    <data-source source="LOCAL" name="PostgreSQL - @localhost" uuid="b6080a44-6012-4a40-9de7-74d17b03d3ae">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="HSQLDB -" uuid="c5b9e138-8457-4146-9ec6-2adaf3c03eb1">
+      <driver-ref>hsqldb.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.hsqldb.jdbc.JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:file:/Volumes/Jeel SSD/Users/Jeel/Desktop/Books/SPRING 15/COMP 473/COMP473/src/</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

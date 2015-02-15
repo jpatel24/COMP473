@@ -128,7 +128,7 @@ public class Facility implements FacilityInterface {
 
     @Override
     public String getFacilityInformation() {
-        return ("Facility Information - " + "ID: " + id + " Facility ID: " + facilityId + " Cost: " + cost + " Vacant: " + vacant + " Description: "+ description + " Owner: " + owner.getFirstName());
+        return ("Facility Information - " + "ID: " + id + " Facility ID: " +  " Cost: " + cost + " Vacant: " + vacant + " Description: "+ description + " Owner: " + owner.getFirstName());
     }
 
     @Override
@@ -137,14 +137,15 @@ public class Facility implements FacilityInterface {
     }
 
 
-
     public Facility getFacilityId() {
         return facilityId;
     }
 
     public void setFacilityId(Facility facilityId) {
+
         this.facilityId = facilityId;
     }
+
 
     @Override
     public void addNewFacility(Facility facility)

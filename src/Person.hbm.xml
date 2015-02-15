@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="src.main.java.FacilitySystem">
+	<class name="src.main.java.FacilitySystem.Person" table="person ">
+		<id name="id">
+			<column name="id"></column>
+			<generator class="identity">
+			</generator>
+		</id>
+		<property name="firstName" type="string" column="firstName" />
+		<property name="lastName" type="string" column="lastName" />
+		<!--<id name="cost" type="int" column="cost"/> -->
+		<property name="age" type="int" column="age" />
+
+		<bag name="facilitiesOwned" table="facility"  cascade="save-update, delete">
+			<key>
+				<column name="ownerid" not-null="true"></column>
+			</key>
+			<one-to-many class="src.main.java.FacilitySystem.Facility" />
+
+		</bag>
+		
+		<bag name="facilitiesRented" table="facility"  cascade="save-update, delete">
+			<key>
+				<column name="renterid" not-null="false"></column>
+			</key>
+			<one-to-many class="src.main.java.FacilitySystem.Facility" />
+
+		</bag>
+		
+	</class>
+</hibernate-mapping>

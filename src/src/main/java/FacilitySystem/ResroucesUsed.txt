@@ -1,0 +1,10 @@
+Since this was our first application that involved working with the database, we were struggling
+to get it working. We had to look up various things involving how to set up the DB and have it
+working. To help us with the project we used a couple of sources that we have listed below.
+
+Resources:
+
+http://facestutorials.icefaces.org/tutorial/hibernate-tutorial.html#stepstocreate
+http://www.javatpoint.com/steps-to-create-first-hibernate-application
+https://docs.jboss.org/hibernate/orm/3.3/reference/en-US/html/session-configuration.html
+

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Jeel on 2/13/15.
  *
- * finish
+ * need a facility service which has a DAO to retrive info..
  */
 public class FacilityUse implements FacilityUseInterface {
 

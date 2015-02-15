@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="src.main.java.FacilitySystem">
+	<class name="src.main.java.FacilitySystem.Facility" table="facilitytable">
+		<id name="id">
+			<column name="id"></column>
+			<generator class="sequence">
+				<!--<param name="sequence">facility_id_seq</param>-->
+			</generator>
+		</id>
+		<property name="vacant" type="boolean" column="vacant" />
+		<property name="description" type="string" column="description" />
+		<!--<id name="cost" type="int" column="cost"/> -->
+		<property name="cost" type="float" column="cost" />
+		<many-to-one name="renter" class="src.main.java.FacilitySystem.Person" fetch="select" cascade="save-update, delete" column="renterid"></many-to-one>
+		<many-to-one name="owner" class="src.main.java.FacilitySystem.Person" fetch="select" cascade="save-update, delete" column="ownerid"></many-to-one>
+		
+
+		<bag name="facilityUse" table="use"  cascade="save-update, delete">
+			<key>
+				<column name="facilityid" not-null="true"></column>
+			</key>
+			<one-to-many class="src.main.java.FacilitySystem.Use" />
+
+		</bag>
+		
+		<bag name="maintenanceRequestList" table="maintenancerequest"  cascade="save-update, delete">
+			<key>
+				<column name="facilityid" not-null="true"></column>
+			</key>
+		<one-to-many class="src.main.java.FacilitySystem.MaintenanceRequest" />
+		
+		</bag>
+		<bag name="facilityProblemsList" table="facilityproblems"  cascade="save-update, delete">
+			<key>
+				<column name="facilityid" not-null="true"></column>
+			</key>
+		<one-to-many class="src.main.java.FacilitySystem.FacilityProblems" />
+		
+		</bag>
+	
+		<bag lazy="false" name="list" table="facility"  inverse="true" cascade="save-update, delete">
+			<key>
+				<column name="id" not-null="true"></column>
+			</key>
+		<one-to-many class="src.main.java.FacilitySystem.Facility" />
+		
+		</bag>
+		<many-to-one name="facilityId" class="src.main.java.FacilitySystem.Facility" fetch="select" cascade="save-update, delete" column="id"></many-to-one>
+		
+	</class>
+</hibernate-mapping>

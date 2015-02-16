@@ -33,12 +33,10 @@ public class Facility implements FacilityInterface {
         this.vacant = vacant;
         this.cost = cost;
         this.description = description;
-
     }
 
     public int requestAvailableCapacity() {
         return capacity;
-
     }
 
     public List<MaintenanceRequest> getMaintenanceRequestList(){
@@ -82,12 +80,13 @@ public class Facility implements FacilityInterface {
     public void setId(int id) {
         this.id = id;
     }
+
     public List<Use> getFacilityUse() {
         return facilityUse;
     }
 
     public void setFacilityUse(List<Use> facilityUse){
-        this.facilityUse=facilityUse;
+        this.facilityUse= this.facilityUse;
     }
 
     public void addUse(Use use){
@@ -99,12 +98,9 @@ public class Facility implements FacilityInterface {
         maintenanceRequestList.add(maintenanceRequest);
     }
 
-
-
     public String getDescription() {
         return description;
     }
-
 
     public void setDescription(String description) {
         this.description = description;
@@ -128,7 +124,7 @@ public class Facility implements FacilityInterface {
 
     @Override
     public String getFacilityInformation() {
-        return ("Facility Information - " + "ID: " + id + ", Facility ID: " +  ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
+        return ("Facility Information - " + "ID: " + id + ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
     }
 
     @Override

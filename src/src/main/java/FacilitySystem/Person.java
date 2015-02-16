@@ -65,6 +65,7 @@ public class Person {
         facilitiesOwned.add(f);
         f.setOwner(this);
     }
+
     public int getId() {
         return id;
     }

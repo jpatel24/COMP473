@@ -28,7 +28,6 @@ public class Facility implements FacilityInterface {
     {
     }
 
-
     public void addFacilityDetail(boolean vacant, float cost, String description) {
         this.vacant = vacant;
         this.cost = cost;

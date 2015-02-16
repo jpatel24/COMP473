@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a86473-40de-4c07-81b5-3bf8ce4039f4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Tests/FacilityMaintenanceTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Tests/PersonTests.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Facility.java" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Facility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Person.java" afterPath="$PROJECT_DIR$/src/src/main/java/FacilitySystem/Person.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FacilityManagementSystem.iws" />
@@ -546,7 +542,13 @@
       <option name="project" value="LOCAL" />
       <updated>1424109078437</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added more unit testing">
+      <created>1424117243135</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1424117243135</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -596,7 +598,8 @@
     </option>
     <MESSAGE value="added person class" />
     <MESSAGE value="added unit testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added unit testing" />
+    <MESSAGE value="added more unit testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more unit testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

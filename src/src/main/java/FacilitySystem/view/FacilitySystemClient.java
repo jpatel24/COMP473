@@ -1,54 +1,48 @@
 package src.main.java.FacilitySystem.view;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
 import src.main.java.FacilitySystem.Facility;
+import src.main.java.FacilitySystem.Person;
+import src.main.java.FacilitySystem.service.FacilityService;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  * Created by Jeel on 2/14/15.
  */
 public class FacilitySystemClient {
 
-    private static SessionFactory sessionFactory;
-    private static ServiceRegistry serviceRegistry;
+    public static void main(String[]args) throws Exception{
 
-    private static SessionFactory configureSessionFactory() throws HibernateException {
-        Configuration configuration = new Configuration();
-        configuration.configure("hibernate.cfg.xml");
-        serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
-        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-        return sessionFactory;
-    }
+        Person person = new Person();
+        person.setAge(23);
+        person.setFirstName("Jeel");
+        person.setLastName("Patel");
 
-    public static SessionFactory getSessionFactory() {
-        return configureSessionFactory();
+        Facility facility1 = new Facility();
+        facility1.setCost(700);
+        facility1.setDescription("Recreation");
+        facility1.setVacant(false);
+        facility1.setOwner(person);
 
-    }
+        System.out.println(person);
+        System.out.println(facility1);
 
-    public static void main(String[]args){
+        FacilityService facilityService = new FacilityService();
+        facilityService.getFacilities();
 
+        Class.forName("com.mysql.jdbc.Driver");
 
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FacilitySystem","root","jeelpatel");
+        PreparedStatement statement = connection.prepareStatement("SELECT * from person");
 
-        //creating session object
-        Session session=sessionFactory.openSession();
+        ResultSet set = statement.executeQuery();
 
-        //creating transaction object
-        Transaction t=session.beginTransaction();
-
-        Facility facility = new Facility();
-        facility.setId(1);
-        facility.setCost(800);
-        facility.setDescription("Admissons");
-
-        session.persist(facility);
-        t.commit();
-        session.close();
-        System.out.println("Successfully saved");
-
+        while(set.next())
+        {
+            System.out.println(set.getString(4)+ " "+ set.getString(5)+ " "+set.getString(6));
+        }
     }
 }

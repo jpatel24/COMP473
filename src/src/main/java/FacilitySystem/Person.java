@@ -71,4 +71,10 @@ public class Person {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return ("Person Information - FirstName: " + getFirstName() +", " + "LastName: " + getLastName() + ", "+ "Age: " + getAge() );
+    }
+
 }

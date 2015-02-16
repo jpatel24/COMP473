@@ -1,11 +1,5 @@
 package src.main.java.FacilitySystem.dal;
 
-import org.hibernate.HibernateException;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
-
 import java.sql.*;
 
 /**
@@ -19,7 +13,7 @@ public class DBHelper {
 
         try {
 
-            Class.forName("org.postgresql.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
 
         } catch (ClassNotFoundException e) {
 
@@ -35,7 +29,7 @@ public class DBHelper {
 
         try {
 
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FacilitySystem","root","jeelpatel");
             Statement st = connection.createStatement();
             ResultSet rs = st.executeQuery("SELECT VERSION()");
 
@@ -59,24 +53,5 @@ public class DBHelper {
 
         return connection;
     }
-
-   //private static final SessionFactory sessionFactory;
-
-    private static SessionFactory sessionFactory;
-    private static ServiceRegistry serviceRegistry;
-
-    private static SessionFactory configureSessionFactory() throws HibernateException {
-        Configuration configuration = new Configuration();
-        configuration.configure("hibernate.cfg.xml");
-        serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
-        sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-        return sessionFactory;
-    }
-
-    public static SessionFactory getSessionFactory() {
-        return configureSessionFactory();
-
-    }
-
 
 }

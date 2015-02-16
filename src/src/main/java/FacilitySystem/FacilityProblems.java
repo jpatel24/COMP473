@@ -17,7 +17,7 @@ public class FacilityProblems {
     @Override
     public String toString()
     {
-        return("Information: ID: "+ id +" Description: " + description+ " Is in use: " + current + " Date: " + date.getTimeInMillis() + " Facility: "+ facility);
+        return("Facility Problems: ID: "+ getId() +" Description: " + getDescription()+ " Is in use: " + current + " Date: " + getDate() + " Facility: "+ getFacility());
     }
     public int getId() {
         return id;

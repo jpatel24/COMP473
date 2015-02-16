@@ -13,13 +13,6 @@ public class Maintenance {
     private String description;
     private Calendar date;
 
-
-    @Override
-    public String toString()
-    {
-        return("Information:  cost: " + cost +" Date: " + date.getTimeInMillis() + " Description: " + description + " Is finished: " + completed + " ID: " + maintenanceRequest);
-    }
-
     public MaintenanceRequest getMaintenanceRequest() {
         return maintenanceRequest;
     }
@@ -52,8 +45,6 @@ public class Maintenance {
         this.date = date;
     }
 
-
-
     public String getDescription() {
         return description;
     }
@@ -68,5 +59,12 @@ public class Maintenance {
 
     public void setId(int maintreqId) {
         this.id = maintreqId;
+    }
+
+
+    @Override
+    public String toString()
+    {
+        return("Maintenance Information:  cost: " + getCost() +" Date: " + getDate() + " Description: " + getDescription() + " Is finished: " + completed + " ID: " + getId());
     }
 }

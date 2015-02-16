@@ -22,18 +22,11 @@ public class MaintenanceRequest {
 
     private List<Maintenance> maintenances;
 
-    @Override
-    public String toString()
-    {
-        return("Information: Calc estimated cost: " + estCost + " Date: " + date.getTimeInMillis() + " Description: " + description + " Is finished: " + current + " ID: " + id);
-    }
-
-    public double calMaintenanceCostForFacility() {
-        int max = 2000;
-        int min = 10;
+    public double calMaintenanceCostForFacility(Maintenance maintenance) {
+        double estimate = maintenance.getCost();
 
         Random r = new Random();
-        estCost = min + (max - min) * r.nextDouble();
+        estCost = estimate + r.nextDouble();
 
         return estCost;
     }
@@ -98,6 +91,12 @@ public class MaintenanceRequest {
     public void addMaintenance(Maintenance m){
         maintenances.add(m);
         m.setMaintenanceRequest(this);
+    }
+
+    @Override
+    public String toString()
+    {
+        return("Maintenance Request Information:  Estimated cost: " + getEstCost() + " Date: " + getDate() + " Description: " + getDescription() + " ID: " + getId());
     }
 
 }

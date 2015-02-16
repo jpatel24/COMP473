@@ -7,4 +7,6 @@ Resources:
 http://facestutorials.icefaces.org/tutorial/hibernate-tutorial.html#stepstocreate
 http://www.javatpoint.com/steps-to-create-first-hibernate-application
 https://docs.jboss.org/hibernate/orm/3.3/reference/en-US/html/session-configuration.html
+http://stackoverflow.com/questions/8621906/is-buildsessionfactory-deprecated-in-hibernate-4
+http://tutorials.jenkov.com/jdbc/preparedstatement.html
 

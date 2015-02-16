@@ -128,12 +128,12 @@ public class Facility implements FacilityInterface {
 
     @Override
     public String getFacilityInformation() {
-        return ("Facility Information - " + "ID: " + id + " Facility ID: " +  " Cost: " + cost + " Vacant: " + vacant + " Description: "+ description + " Owner: " + owner.getFirstName());
+        return ("Facility Information - " + "ID: " + id + ", Facility ID: " +  ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
     }
 
     @Override
     public String toString() {
-        return ("Facility Information - " + "ID: " + id + " Cost: " + cost + " Vacant: " + vacant + " Description: "+ description + " Owner: " + owner.getFirstName());
+        return ("Facility Information - " + "ID: " + id + ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
     }
 
 

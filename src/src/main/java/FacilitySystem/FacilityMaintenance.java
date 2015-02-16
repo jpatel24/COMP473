@@ -83,12 +83,12 @@ public class FacilityMaintenance implements FacilityMaintenanceInterface {
         Iterator<FacilityProblems> i = maintenanceList.iterator();
         while(i.hasNext())
         {
-            FacilityProblems fp = i.next();
+            FacilityProblems facilityProblems = i.next();
             cal.setTimeInMillis(System.currentTimeMillis());
             cal.add(Calendar.YEAR, -1);
 
-            if(fp!=null){
-                if ((fp.getDate().getTimeInMillis() - cal.getTimeInMillis())  > 0)
+            if(facilityProblems!=null){
+                if ((facilityProblems.getDate().getTimeInMillis() - cal.getTimeInMillis())  > 0)
                 {
                     downTime++;
                 }

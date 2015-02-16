@@ -34,7 +34,7 @@ public class MaintenanceService {
     public void addMaintenance(Maintenance m, MaintenanceRequest mr) {
 
         try {
-            mr.addMaintenance(m);
+           mDAO.addMaintenance(m);
             mDAO.updateMaintenanceRequest(mr);
         } catch (Exception se) {
             System.err.println("MaintService: Threw a Exception adding maintenance.");

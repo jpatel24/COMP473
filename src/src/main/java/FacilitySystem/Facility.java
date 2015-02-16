@@ -18,7 +18,7 @@ public class Facility implements FacilityInterface {
     private List<MaintenanceRequest> maintenanceRequestList;
     private boolean vacant;
     private float cost;
-    private Facility facilityId;
+    private int facilityId;
     private List<Facility> list;
     private List<FacilityProblems> facilityProblemsList;
     private Person owner;
@@ -32,10 +32,12 @@ public class Facility implements FacilityInterface {
         this.vacant = vacant;
         this.cost = cost;
         this.description = description;
+
     }
 
     public int requestAvailableCapacity() {
         return capacity;
+
     }
 
     public List<MaintenanceRequest> getMaintenanceRequestList(){
@@ -79,13 +81,12 @@ public class Facility implements FacilityInterface {
     public void setId(int id) {
         this.id = id;
     }
-
     public List<Use> getFacilityUse() {
         return facilityUse;
     }
 
     public void setFacilityUse(List<Use> facilityUse){
-        this.facilityUse= this.facilityUse;
+        this.facilityUse=facilityUse;
     }
 
     public void addUse(Use use){
@@ -97,9 +98,12 @@ public class Facility implements FacilityInterface {
         maintenanceRequestList.add(maintenanceRequest);
     }
 
+
+
     public String getDescription() {
         return description;
     }
+
 
     public void setDescription(String description) {
         this.description = description;
@@ -121,26 +125,14 @@ public class Facility implements FacilityInterface {
         this.vacant = vacant;
     }
 
-    @Override
-    public String getFacilityInformation() {
-        return ("Facility Information - " + "ID: " + id + ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
-    }
-
-    @Override
-    public String toString() {
-        return ("Facility Information - " + "ID: " + id + ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
-    }
-
-
-    public Facility getFacilityId() {
+    public int getFacilityId() {
         return facilityId;
     }
 
-    public void setFacilityId(Facility facilityId) {
+    public void setFacilityId(int facilityId) {
 
         this.facilityId = facilityId;
     }
-
 
     @Override
     public void addNewFacility(Facility facility)
@@ -174,5 +166,15 @@ public class Facility implements FacilityInterface {
 
     public void setRenter(Person renter) {
         this.renter = renter;
+    }
+
+    @Override
+    public String getFacilityInformation() {
+        return ("Facility Information - " + "ID: " + id + ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
+    }
+
+    @Override
+    public String toString() {
+        return ("Facility Information - " + "ID: " + id + ", Cost: " + cost + ", Vacant: " + vacant + ", Description: "+ description + ", Owner: " + owner.getFirstName());
     }
 }

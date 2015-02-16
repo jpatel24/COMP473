@@ -52,4 +52,7 @@ public class Use {
 
 
 
+    public String toString() {
+        return ("Use Information - " + "ID: " + id + ", Facility: " + getFacility() + ", Description: " + getUseDescription() + ", Start Date: "+ getStartDate() + ", End Date: " + getEndDate());
+    }
 }

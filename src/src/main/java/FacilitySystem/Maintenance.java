@@ -65,6 +65,6 @@ public class Maintenance {
     @Override
     public String toString()
     {
-        return("Maintenance Information:  cost: " + getCost() +" Date: " + getDate() + " Description: " + getDescription() + " Is finished: " + completed + " ID: " + getId());
+        return("Maintenance Information - Cost: " + getCost() +", Date: " + getDate() + ", Description: " + getDescription() + ", Is finished: " + completed + ", ID: " + getId());
     }
 }

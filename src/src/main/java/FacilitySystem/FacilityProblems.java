@@ -14,11 +14,6 @@ public class FacilityProblems {
     private Calendar date;
     private Facility facility;
 
-    @Override
-    public String toString()
-    {
-        return("Facility Problems: ID: "+ getId() +" Description: " + getDescription()+ " Is in use: " + current + " Date: " + getDate() + " Facility: "+ getFacility());
-    }
     public int getId() {
         return id;
     }
@@ -48,6 +43,12 @@ public class FacilityProblems {
     }
     public void setFacility(Facility facility) {
         this.facility = facility;
+    }
+
+    @Override
+    public String toString()
+    {
+        return("Facility Problems - ID: "+ getId() +", Description: " + getDescription()+ ", Is in use: " + current + ", Date: " + getDate() + ", Facility: "+ getFacility());
     }
 
 

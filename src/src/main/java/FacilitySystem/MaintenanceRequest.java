@@ -96,7 +96,7 @@ public class MaintenanceRequest {
     @Override
     public String toString()
     {
-        return("Maintenance Request Information:  Estimated cost: " + getEstCost() + " Date: " + getDate() + " Description: " + getDescription() + " ID: " + getId());
+        return("Maintenance Request Information - Estimated cost: " + getEstCost() + ", Date: " + getDate() + ", Description: " + getDescription() + ", ID: " + getId());
     }
 
 }

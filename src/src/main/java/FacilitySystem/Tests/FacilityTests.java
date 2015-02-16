@@ -1,16 +1,11 @@
 package src.main.java.FacilitySystem.Tests;
 
-import junit.framework.Assert;
 import org.junit.Test;
 import src.main.java.FacilitySystem.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static junit.framework.TestCase.assertNull;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
 /**

@@ -1,7 +1,7 @@
 package src.main.java.FacilitySystem.Tests;
 
 import org.junit.Test;
-import src.main.java.FacilitySystem.*;
+import src.main.java.FacilitySystem.model.*;
 
 import java.util.ArrayList;
 import java.util.List;

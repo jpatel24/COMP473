@@ -1,4 +1,4 @@
-package src.main.java.FacilitySystem;
+package src.main.java.FacilitySystem.model;
 import java.util.Calendar;
 /**
  * Created by Ti on 2/5/2015.
@@ -7,7 +7,7 @@ public class Use {
     private Calendar StartDate;
     private Calendar EndDate;
     private String useDescription;
-    private int id;
+    private int UseId;
     private Facility facility;
 
     public Facility getFacility(){
@@ -18,12 +18,12 @@ public class Use {
         this.facility=facility;
     }
 
-    public int getId() {
-        return id;
+    public int getUseId() {
+        return UseId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUseId(int useId) {
+        this.UseId = useId;
     }
 
     public Calendar getStartDate() {
@@ -53,6 +53,6 @@ public class Use {
 
 
     public String toString() {
-        return ("Use Information - " + "ID: " + id + ", Facility: " + getFacility() + ", Description: " + getUseDescription() + ", Start Date: "+ getStartDate() + ", End Date: " + getEndDate());
+        return ("Use Information - " + "ID: " + UseId + ", Facility: " + getFacility() + ", Description: " + getUseDescription() + ", Start Date: "+ getStartDate() + ", End Date: " + getEndDate());
     }
 }

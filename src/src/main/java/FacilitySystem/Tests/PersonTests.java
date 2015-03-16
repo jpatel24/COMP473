@@ -1,9 +1,8 @@
 package src.main.java.FacilitySystem.Tests;
 
 import org.junit.Test;
-import src.main.java.FacilitySystem.Facility;
-import src.main.java.FacilitySystem.Person;
-import src.main.java.FacilitySystem.view.FacilitySystemClient;
+import src.main.java.FacilitySystem.model.Facility;
+import src.main.java.FacilitySystem.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;

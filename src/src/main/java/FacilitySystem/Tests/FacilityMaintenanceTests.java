@@ -1,11 +1,8 @@
 package src.main.java.FacilitySystem.Tests;
 
 import org.junit.Test;
-import src.main.java.FacilitySystem.Facility;
-import src.main.java.FacilitySystem.FacilityMaintenance;
-import src.main.java.FacilitySystem.Maintenance;
-import src.main.java.FacilitySystem.MaintenanceRequest;
-import src.main.java.FacilitySystem.service.FacilityService;
+import src.main.java.FacilitySystem.model.Facility;
+import src.main.java.FacilitySystem.model.FacilityMaintenance;
 
 import java.util.ArrayList;
 import java.util.List;

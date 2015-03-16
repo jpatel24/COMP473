@@ -1,8 +1,8 @@
 package src.main.java.FacilitySystem.service;
 
-import src.main.java.FacilitySystem.Maintenance;
-import src.main.java.FacilitySystem.MaintenanceRequest;
-import src.main.java.FacilitySystem.dal.MaintenanceDAO;
+import src.main.java.FacilitySystem.dal.MaintenanceHibernateDAO;
+import src.main.java.FacilitySystem.model.Maintenance;
+import src.main.java.FacilitySystem.model.MaintenanceRequest;
 
 /**
  * Created by Jeel on 2/15/15.
@@ -10,13 +10,13 @@ import src.main.java.FacilitySystem.dal.MaintenanceDAO;
 public class MaintenanceService {
     public MaintenanceService(){
     }
-    private MaintenanceDAO mDAO;
+    private MaintenanceHibernateDAO mDAO;
 
-    public void setMDAO(MaintenanceDAO m){
+    public void setMDAO(MaintenanceHibernateDAO m){
         this.mDAO = m;
     }
 
-    public MaintenanceDAO getMDAO(){
+    public MaintenanceHibernateDAO getMDAO(){
         return mDAO;
     }
 
@@ -31,18 +31,15 @@ public class MaintenanceService {
         return null;
     }
 
-    public void addMaintenance(Maintenance m, MaintenanceRequest mr) {
+    public void addMaintenance(Maintenance m) {
 
         try {
            mDAO.addMaintenance(m);
-            mDAO.updateMaintenanceRequest(mr);
         } catch (Exception se) {
             System.err.println("MaintService: Threw a Exception adding maintenance.");
             System.err.println(se.getMessage());
         }
     }
-
-
 
     public MaintenanceRequest getMaintenanceRequestById(int facilityId){
         try {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="src.main.java.FacilitySystem">
+    <class name="src.main.java.FacilitySystem.model.Facility" table="Facility">
+        <id name="id">
+            <column name="FacilityId"></column>
+        </id>
+        <property name="vacant" type="boolean" column="vacant" />
+        <property name="description" type="string" column="description" />
+
+        <property name="cost" type="float" column="cost" />
+        <many-to-one name="renter" class="src.main.java.FacilitySystem.model.Person" fetch="select" cascade="save-update, delete" column="renterid"></many-to-one>
+        <many-to-one name="owner" class="src.main.java.FacilitySystem.model.Person" fetch="select" cascade="save-update, delete" column="ownerid"></many-to-one>
+
+        <bag name="facilityUse" table="Use"  cascade="save-update, delete">
+            <key>
+                <column name="UseId" not-null="true"></column>
+            </key>
+            <one-to-many class="src.main.java.FacilitySystem.model.Use" />
+
+        </bag>
+
+        <bag name="maintenanceRequestList" table="MaintenanceRequest"  cascade="save-update, delete">
+            <key>
+                <column name="FacilityId" not-null="true"></column>
+            </key>
+            <one-to-many class="src.main.java.FacilitySystem.model.MaintenanceRequest" />
+
+        </bag>
+        <bag name="facilityProblemsList" table="FacilityProblems"  cascade="save-update, delete">
+            <key>
+                <column name="FacilityId" not-null="true"></column>
+            </key>
+            <one-to-many class="src.main.java.FacilitySystem.model.FacilityProblems" />
+
+        </bag>
+
+        <bag lazy="false" name="list" table="Facility"  inverse="true" cascade="save-update, delete">
+            <key>
+                <column name="FacilityId" not-null="true"></column>
+            </key>
+            <one-to-many class="src.main.java.FacilitySystem.model.Facility" />
+
+        </bag>
+
+    </class>
+</hibernate-mapping>

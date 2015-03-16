@@ -1,4 +1,4 @@
-package src.main.java.FacilitySystem;
+package src.main.java.FacilitySystem.model;
 import java.util.*;
 /**
  * Created by Ti on 2/5/2015.
@@ -6,6 +6,16 @@ import java.util.*;
  * Helper class to define a person. list of facilities owned or rented.
  */
 public class Person {
+
+    private int personid;
+
+    public int getPersonid() {
+        return personid;
+    }
+
+    public void setPersonid(int personid) {
+        this.personid = personid;
+    }
 
     public Person(){}
 
@@ -66,11 +76,11 @@ public class Person {
         f.setOwner(this);
     }
 
-    public int getId() {
+    public int getPersonId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setPersonId(int personId) {
+        this.id = personId;
     }
 
     @Override

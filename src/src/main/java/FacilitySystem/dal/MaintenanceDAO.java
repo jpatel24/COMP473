@@ -1,7 +1,7 @@
 package src.main.java.FacilitySystem.dal;
 
-import src.main.java.FacilitySystem.Maintenance;
-import src.main.java.FacilitySystem.MaintenanceRequest;
+import src.main.java.FacilitySystem.model.Maintenance;
+import src.main.java.FacilitySystem.model.MaintenanceRequest;
 
 import java.sql.*;
 
@@ -46,7 +46,7 @@ public class MaintenanceDAO {
         try {
 
           Connection connection = DBHelper.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT FROM Maintenance WHERE Id=?");
+            PreparedStatement statement = connection.prepareStatement("SELECT FROM Maintenance WHERE MaintenanceId=?");
             statement.setInt(1,maintId);
             ResultSet set = statement.executeQuery();
             Maintenance maintenance = new Maintenance();
@@ -89,7 +89,7 @@ public class MaintenanceDAO {
 
         try {
             Connection connection = DBHelper.getConnection();
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO Maintenance(MaintReqId, Id, Completed, Description, Date) VALUES (?,?,?,?,?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO Maintenance(MaintReqId, MaintenanceId, Completed, Description, Date) VALUES (?,?,?,?,?)");
             statement.setInt(2,maintenance.getId());
             statement.setBoolean(3,maintenance.isCompleted());
             statement.setString(4,maintenance.getDescription());

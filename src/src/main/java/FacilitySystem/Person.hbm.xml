@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="src.main.java.FacilitySystem.model">
+    <class name="src.main.java.FacilitySystem.model.Person" table="Person">
+        <id name="personid">
+            <column name="PersonId"></column>
+            <generator class="identity">
+            </generator>
+        </id>
+        <property name="firstName" type="string" column="firstName" />
+        <property name="lastName" type="string" column="lastName" />
+        <!--<personId name="cost" type="int" column="cost"/> -->
+        <property name="age" type="int" column="age" />
+
+        <bag name="facilitiesOwned" table="Facility"  cascade="save-update, delete">
+            <key>
+                <column name="FacilityId" not-null="true"></column>
+            </key>
+            <one-to-many class="src.main.java.FacilitySystem.model.Facility" />
+
+        </bag>
+
+        <bag name="facilitiesRented" table="Facility"  cascade="save-update, delete">
+            <key>
+                <column name="FacilityId" not-null="false"></column>
+            </key>
+            <one-to-many class="src.main.java.FacilitySystem.model.Facility" />
+
+        </bag>
+
+    </class>
+</hibernate-mapping>

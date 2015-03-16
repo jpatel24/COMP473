@@ -4,7 +4,7 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <description>Wiring the dependencies for the Online book Store Application.</description>
+    <description>Wiring the dependencies for the Facility System Application.</description>
 
     <context:component-scan base-package="src.main.java.FacilitySystem" />
 

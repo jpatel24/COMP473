@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <description>Wiring the dependencies for the Online book Store Application.</description>
+
+    <context:component-scan base-package="src.main.java.FacilitySystem" />
+
+    <bean id="owner" class="src.main.java.FacilitySystem.Person" scope="prototype">
+        <!-- Inject the Facility List -->
+        <property name="facilitiesOwned">
+            <list/>
+
+        </property>
+
+        <property name="facilitiesRented">
+            <list/>
+
+        </property>
+    </bean>
+
+    <bean id="renter" class="src.main.java.FacilitySystem.Person" scope="prototype">
+        <!-- Inject the Facility List -->
+        <property name="facilitiesOwned">
+            <list/>
+        </property>
+
+        <property name="facilitiesRented">
+            <list/>
+        </property>
+    </bean>
+
+    <bean id="facility" class="src.main.java.FacilitySystem.Facility" scope="prototype">
+        <property name="owner" ref="owner"/>
+        <property name="renter" ref="renter"/>
+
+        <property name="facilityUse">
+            <list/>
+        </property>
+
+        <property name="maintenanceRequestList">
+            <list/>
+        </property>
+
+        <property name="list">
+            <list/>
+        </property>
+
+        <property name="facilityProblemsList">
+            <list/>
+        </property>
+    </bean>
+
+    <bean id="use" class="src.main.java.FacilitySystem.Use" scope="prototype">
+        <property name="facility" ref="facility"/>
+    </bean>
+
+    <bean id="maintenanceRequest" class="src.main.java.FacilitySystem.MaintenanceRequest" scope="prototype">
+        <property name="maintenances">
+            <list/>
+            <!-- uncomment these lines if you want to create a list with NULL object of type OrderDetail
+             <list>
+                 <ref bean="orderDetail" />
+            </list>
+            -->
+        </property>
+    </bean>
+
+    <bean id="maintenance" class="src.main.java.FacilitySystem.Maintenance" scope="prototype">
+        <property name="maintenanceRequest" ref="maintenanceRequest" />
+    </bean>
+
+    <bean id="maintenanceList" class="java.util.ArrayList" scope="prototype">
+        <constructor-arg>
+            <list>
+                <ref bean="maintenance" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="facilityProblems" class="src.main.java.FacilitySystem.FacilityProblems" scope="prototype">
+        <property name="facility" ref="facility" />
+    </bean>
+
+    <bean id="facilityService" class="src.main.java.FacilitySystem.service.FacilityService" scope="prototype">
+
+    </bean>
+
+    <bean id="facilityUse" class="src.main.java.FacilitySystem.FacilityUse" scope="prototype">
+        <property name="facilityService" ref="facilityService"/>
+    </bean>
+
+    <bean id="maintenanceService" class="src.main.java.FacilitySystem.service.MaintenanceService" scope="prototype">
+
+    </bean>
+
+    <bean id="facilityMaintenance" class="src.main.java.FacilitySystem.FacilityMaintenance" scope="prototype">
+        <property name="facilityService" ref="facilityService"/>
+        <property name="maintenanceService" ref="maintenanceService"/>
+    </bean>
+
+
+</beans>

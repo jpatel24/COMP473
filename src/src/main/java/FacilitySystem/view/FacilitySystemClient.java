@@ -1,9 +1,14 @@
 package src.main.java.FacilitySystem.view;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import src.main.java.FacilitySystem.*;
+import src.main.java.FacilitySystem.model.*;
 import src.main.java.FacilitySystem.service.FacilityService;
 import src.main.java.FacilitySystem.service.MaintenanceService;
+import sun.applet.Main;
 
+import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -20,14 +25,20 @@ public class FacilitySystemClient {
 
     public static void main(String[]args) throws Exception{
 
-        FacilityService facilityService = new FacilityService();
-        MaintenanceService maintenanceService = new MaintenanceService();
-        Person person = new Person();
+        ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+
+        //FacilityService facilityService = new FacilityService();
+        FacilityService facilityService = (FacilityService) context.getBean("facilityService");
+        //MaintenanceService maintenanceService = new MaintenanceService();
+        MaintenanceService maintenanceService = (MaintenanceService) context.getBean("maintenanceService");
+        //Person person = new Person();
+        Person person = (Person) context.getBean("owner");
         person.setAge(23);
         person.setFirstName("Jeel");
         person.setLastName("Patel");
 
-        Facility facility1 = new Facility();
+        //Facility facility1 = new Facility();
+        Facility facility1 = (Facility) context.getBean("facility");
         facility1.setCost(700);
         facility1.setDescription("Admissons and Registras  ");
         facility1.setVacant(false);
@@ -36,26 +47,32 @@ public class FacilitySystemClient {
 
 
         Calendar calendar = new GregorianCalendar();
-        Use use = new Use();
+
+        //Use use = new Use();
+        Use use = (Use) context.getBean("use");
         use.setFacility(facility1);
         use.setUseDescription("Filing records");
        // use.setStartDate(calendar.set(2004,5,13));
-        use.setId(2);
+        use.setUseId(2);
 
-        List<Maintenance> maintenanceList = new ArrayList<Maintenance>();
-        MaintenanceRequest maintenanceRequest = new MaintenanceRequest();
+        //List<Maintenance> maintenanceList = new ArrayList<Maintenance>();
+        List<Maintenance> maintenanceList = (ArrayList<Maintenance>) context.getBean("maintenanceList");
+        //MaintenanceRequest maintenanceRequest = new MaintenanceRequest();
+        MaintenanceRequest maintenanceRequest = (MaintenanceRequest) context.getBean("maintenanceRequest");
         maintenanceRequest.setFacility(facility1);
         maintenanceRequest.setCurrent(true);
         maintenanceRequest.setEstCost(50);
         maintenanceRequest.setMaintenances(maintenanceList);
 
-        Maintenance maintenance = new Maintenance();
+        //Maintenance maintenance = new Maintenance();
+        Maintenance maintenance = (Maintenance) context.getBean("maintenance");
         maintenance.setDescription("Leaky faucet");
         maintenance.setCost(300);
         maintenance.setMaintenanceRequest(maintenanceRequest);
         //maintenanceService.addMaintenance(maintenance,maintenanceRequest);
 
-        FacilityProblems facilityProblems = new FacilityProblems();
+        //FacilityProblems facilityProblems = new FacilityProblems();
+        FacilityProblems facilityProblems = (FacilityProblems) context.getBean("facilityProblems");
         facilityProblems.setDescription("heater broken");
         facilityProblems.setCurrent(false);
         facilityProblems.setFacility(facility1);

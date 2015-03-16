@@ -8,7 +8,7 @@
 
     <context:component-scan base-package="src.main.java.FacilitySystem" />
 
-    <bean id="owner" class="src.main.java.FacilitySystem.Person" scope="prototype">
+    <bean id="owner" class="src.main.java.FacilitySystem.model.Person" scope="prototype">
         <!-- Inject the Facility List -->
         <property name="facilitiesOwned">
             <list/>
@@ -21,7 +21,7 @@
         </property>
     </bean>
 
-    <bean id="renter" class="src.main.java.FacilitySystem.Person" scope="prototype">
+    <bean id="renter" class="src.main.java.FacilitySystem.model.Person" scope="prototype">
         <!-- Inject the Facility List -->
         <property name="facilitiesOwned">
             <list/>
@@ -32,7 +32,7 @@
         </property>
     </bean>
 
-    <bean id="facility" class="src.main.java.FacilitySystem.Facility" scope="prototype">
+    <bean id="facility" class="src.main.java.FacilitySystem.model.Facility" scope="prototype">
         <property name="owner" ref="owner"/>
         <property name="renter" ref="renter"/>
 
@@ -53,11 +53,11 @@
         </property>
     </bean>
 
-    <bean id="use" class="src.main.java.FacilitySystem.Use" scope="prototype">
+    <bean id="use" class="src.main.java.FacilitySystem.model.Use" scope="prototype">
         <property name="facility" ref="facility"/>
     </bean>
 
-    <bean id="maintenanceRequest" class="src.main.java.FacilitySystem.MaintenanceRequest" scope="prototype">
+    <bean id="maintenanceRequest" class="src.main.java.FacilitySystem.model.MaintenanceRequest" scope="prototype">
         <property name="maintenances">
             <list/>
             <!-- uncomment these lines if you want to create a list with NULL object of type OrderDetail
@@ -68,7 +68,7 @@
         </property>
     </bean>
 
-    <bean id="maintenance" class="src.main.java.FacilitySystem.Maintenance" scope="prototype">
+    <bean id="maintenance" class="src.main.java.FacilitySystem.model.Maintenance" scope="prototype">
         <property name="maintenanceRequest" ref="maintenanceRequest" />
     </bean>
 
@@ -80,7 +80,7 @@
         </constructor-arg>
     </bean>
 
-    <bean id="facilityProblems" class="src.main.java.FacilitySystem.FacilityProblems" scope="prototype">
+    <bean id="facilityProblems" class="src.main.java.FacilitySystem.model.FacilityProblems" scope="prototype">
         <property name="facility" ref="facility" />
     </bean>
 
@@ -88,7 +88,7 @@
 
     </bean>
 
-    <bean id="facilityUse" class="src.main.java.FacilitySystem.FacilityUse" scope="prototype">
+    <bean id="facilityUse" class="src.main.java.FacilitySystem.model.FacilityUse" scope="prototype">
         <property name="facilityService" ref="facilityService"/>
     </bean>
 
@@ -96,7 +96,7 @@
 
     </bean>
 
-    <bean id="facilityMaintenance" class="src.main.java.FacilitySystem.FacilityMaintenance" scope="prototype">
+    <bean id="facilityMaintenance" class="src.main.java.FacilitySystem.model.FacilityMaintenance" scope="prototype">
         <property name="facilityService" ref="facilityService"/>
         <property name="maintenanceService" ref="maintenanceService"/>
     </bean>

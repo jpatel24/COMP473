@@ -1,4 +1,4 @@
-package src.main.java.FacilitySystem;
+package src.main.java.FacilitySystem.model;
 
 import src.main.java.FacilitySystem.service.FacilityService;
 import src.main.java.FacilitySystem.service.MaintenanceService;

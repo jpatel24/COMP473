@@ -1,13 +1,9 @@
 package src.main.java.FacilitySystem.view;
 
-import src.main.java.FacilitySystem.*;
+import src.main.java.FacilitySystem.model.*;
 import src.main.java.FacilitySystem.service.FacilityService;
 import src.main.java.FacilitySystem.service.MaintenanceService;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -39,8 +35,8 @@ public class FacilitySystemClient {
         Use use = new Use();
         use.setFacility(facility1);
         use.setUseDescription("Filing records");
-       // use.setStartDate(calendar.set(2004,5,13));
-        use.setId(2);
+       // aduse.setStartDate(calendar.set(2004,5,13));
+        use.setUseId(2);
 
         List<Maintenance> maintenanceList = new ArrayList<Maintenance>();
         MaintenanceRequest maintenanceRequest = new MaintenanceRequest();
@@ -60,6 +56,7 @@ public class FacilitySystemClient {
         facilityProblems.setCurrent(false);
         facilityProblems.setFacility(facility1);
 
+       // facilityService.getUses(facility1);
 
         System.out.println(person);
         System.out.println(facility1);
@@ -73,16 +70,5 @@ public class FacilitySystemClient {
        // FacilityService facilityService1 = new FacilityService();
         //facilityService1.getFacilities();
 
-        Class.forName("com.mysql.jdbc.Driver");
-
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FacilitySystem","root","jeelpatel");
-        PreparedStatement statement = connection.prepareStatement("SELECT * from person");
-
-        ResultSet set = statement.executeQuery();
-
-        while(set.next())
-        {
-            System.out.println(set.getString(4)+ " "+ set.getString(5)+ " "+set.getString(6));
-        }
     }
 }

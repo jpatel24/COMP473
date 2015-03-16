@@ -1,4 +1,4 @@
-package src.main.java.FacilitySystem;
+package src.main.java.FacilitySystem.model;
 
 import src.main.java.FacilitySystem.service.FacilityService;
 
@@ -56,7 +56,7 @@ public class FacilityUse implements FacilityUseInterface {
     public boolean isInUseDuringInterval(Facility facility,Calendar startDate, Calendar endDate)
     {
 
-        return facilityservice.isFacilityInUse( startDate, endDate);
+        return facilityservice.isFacilityInUse( facility,startDate, endDate);
 
 
     }
@@ -74,7 +74,8 @@ public class FacilityUse implements FacilityUseInterface {
 
     public List<Use> listInspections(Facility facility) {
 
-        return facilityservice.getInspections(facility);
+        //return facilityservice.getInspections(facility);
+        return null;
     }
 
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="src.main.java.FacilitySystem">
+    <class name="src.main.java.FacilitySystem.model.Maintenance" table="Maintenance">
+        <id name="id" column="MaintenanceId">
+            <generator class="identity">
+            </generator>
+        </id>
+        <many-to-one name="maintenanceRequest" class="src.main.java.FacilitySystem.model.MaintenanceRequest" fetch="select" cascade="save-update, delete" column="maintreqid"></many-to-one>
+        <property name="completed" type="boolean" column="completed" />
+        <property name="description" type="string" column="description" />
+        <property name="date" type="calendar" column="date" />
+
+    </class>
+</hibernate-mapping>

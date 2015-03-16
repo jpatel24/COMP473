@@ -5,8 +5,8 @@ package src.main.java.FacilitySystem.dal;
  */
 
 
-import src.main.java.FacilitySystem.Facility;
-import src.main.java.FacilitySystem.Use;
+import src.main.java.FacilitySystem.model.Facility;
+import src.main.java.FacilitySystem.model.Use;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -27,7 +27,7 @@ public class FacilityDAO {
         try {
             //Get Facility
             Connection connection = DBHelper.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT Id,Vacant,Description,Cost FROM FacilityTable WHERE id=?");
+            PreparedStatement statement = connection.prepareStatement("SELECT FacilityId,Vacant,Description,Cost FROM FacilityTable WHERE FacilityId=?");
             statement.setInt(1,facilityID);
 
             ResultSet set = statement.executeQuery();
@@ -37,7 +37,7 @@ public class FacilityDAO {
             Facility facility = new Facility();
             while(set.next())
             {
-               facility.setId(set.getInt(1));
+                facility.setId(set.getInt(1));
                 facility.setVacant(set.getBoolean(2));
                 facility.setDescription(set.getString(3));
                 facility.setCost(set.getFloat(4));
@@ -46,13 +46,13 @@ public class FacilityDAO {
             set.close();
             return facility;
         }
-            //close to manage resources
+        //close to manage resources
 
-            catch (SQLException se) {
-                System.err.println("FacilityDAO: Threw a SQLException retrieving the customer object.");
-                System.err.println(se.getMessage());
-                se.printStackTrace();
-            }
+        catch (SQLException se) {
+            System.err.println("FacilityDAO: Threw a SQLException retrieving the customer object.");
+            System.err.println(se.getMessage());
+            se.printStackTrace();
+        }
         return null;
     }
 
@@ -61,7 +61,7 @@ public class FacilityDAO {
         try {
             Connection connection = DBHelper.getConnection();
             int removeID = facility.getId();
-            PreparedStatement statement = connection.prepareStatement("SELECT Id FROM FacilityTable WHERE id=removeId");
+            PreparedStatement statement = connection.prepareStatement("SELECT FacilityId FROM FacilityTable WHERE FacilityId=removeId");
 
             ResultSet set = statement.executeQuery();
             facility.removeFacility(set.getInt(1));
@@ -102,7 +102,7 @@ public class FacilityDAO {
         try {
             Connection connection = DBHelper.getConnection();
 
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO FacilityTable(Id,Vacant,Description,Cost) VALUES (?,?,?,?)");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO FacilityTable(FacilityId,Vacant,Description,Cost) VALUES (?,?,?,?)");
             statement.setInt(1, facility.getId());
             statement.setBoolean(2,facility.isVacant());
             statement.setString(3,facility.getDescription());
@@ -119,20 +119,20 @@ public class FacilityDAO {
     }
 
     public void updateFacility(Facility facility) {
-       try{
-           Connection connection = DBHelper.getConnection();
-           PreparedStatement statement = connection.prepareStatement("UPDATE FacilityTable SET Vacant=? WHERE Id=?");
-           statement.setBoolean(1, facility.isVacant());
-           statement.setInt(2,facility.getId());
-           statement.executeUpdate();
+        try{
+            Connection connection = DBHelper.getConnection();
+            PreparedStatement statement = connection.prepareStatement("UPDATE FacilityTable SET Vacant=? WHERE FacilityId=?");
+            statement.setBoolean(1, facility.isVacant());
+            statement.setInt(2,facility.getId());
+            statement.executeUpdate();
 
-           connection.close();
+            connection.close();
 
-       }catch (SQLException se){
-           System.err.println("FacilityDAO: Threw a SQLException retrieving the customer object.");
-           System.err.println(se.getMessage());
-           se.printStackTrace();
-       }
+        }catch (SQLException se){
+            System.err.println("FacilityDAO: Threw a SQLException retrieving the customer object.");
+            System.err.println(se.getMessage());
+            se.printStackTrace();
+        }
     }
 
 
@@ -160,7 +160,7 @@ public class FacilityDAO {
 
     public List<Use> getUses(Facility facility){
         try{
-                Connection connection = DBHelper.getConnection();
+            Connection connection = DBHelper.getConnection();
 
             PreparedStatement statement = connection.prepareStatement("SELECT Description FROM Use WHERE Description=?");
             statement.setString(1, facility.getDescription());

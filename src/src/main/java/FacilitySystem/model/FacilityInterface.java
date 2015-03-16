@@ -1,4 +1,4 @@
-package src.main.java.FacilitySystem;
+package src.main.java.FacilitySystem.model;
 import java.util.List;
 /**
  * Created by Jeel on 2/4/15.

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="src.main.java.FacilitySystem">
+    <class name="src.main.java.FacilitySystem.model.MaintenanceRequest" table="MaintenanceRequest">
+        <id name="id" column="MaintReqId">
+            <generator class="identity" />
+        </id>
+        <property name="current" type="boolean" column="current" />
+        <property name="description" type="string" column="description" />
+        <property name="date" type="calendar" column="date" />
+        <property name="estCost" type="double" column="estimatedcost" />
+        <many-to-one name="facility" class="src.main.java.FacilitySystem.model.Facility"  cascade="save-update, delete" column="facilityid"></many-to-one>
+
+        <bag lazy="false" name="maintenances" table="Maintenance"  cascade="save-update, delete">
+            <key>
+                <column name="MaintReqId" not-null="true"></column>
+            </key>
+            <one-to-many  class="src.main.java.FacilitySystem.model.Maintenance" />
+
+        </bag>
+    </class>
+</hibernate-mapping>

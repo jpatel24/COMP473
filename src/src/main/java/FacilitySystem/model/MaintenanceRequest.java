@@ -1,4 +1,4 @@
-package src.main.java.FacilitySystem;
+package src.main.java.FacilitySystem.model;
 
 import java.util.Calendar;
 import java.util.Random;

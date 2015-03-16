@@ -1,4 +1,4 @@
-package src.main.java.FacilitySystem;
+package src.main.java.FacilitySystem.model;
 
 import java.util.Iterator;
 import java.util.List;
@@ -12,8 +12,10 @@ import java.util.List;
  */
 public class Facility implements FacilityInterface {
     private int id;
+    private int ownerid;
     private int capacity;
     private List<Use> facilityUse;
+    private List<Unit> units;
     private String description;
     private List<MaintenanceRequest> maintenanceRequestList;
     private boolean vacant;
@@ -28,6 +30,13 @@ public class Facility implements FacilityInterface {
     {
     }
 
+    public List<Unit> getUnits(){
+        return units;
+    }
+
+    public void setUnits(List<Unit> units){
+        this.units = units;
+    }
     public void addFacilityDetail(boolean vacant, float cost, String description) {
         this.vacant = vacant;
         this.cost = cost;

@@ -4,13 +4,16 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" value="c5b9e138-8457-4146-9ec6-2adaf3c03eb1" />
+          <unit-entry name="hibernate.cfg.xml" value="19ed6be0-ace1-40b4-9639-5ae34d22edb7" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/resources/hibernate.cfg.xml" />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/src/main/java/FacilitySystem/hibernate.cfg.xml" />
       </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -53,5 +56,17 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Spring-4.1.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Spring Integration-4.0.3" level="project" />
+    <orderEntry type="library" name="Hibernate 4.2.2-4.2.2 (2)" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/junit-4.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="hibernate3 (2)" level="project" />
   </component>
 </module>

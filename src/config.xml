@@ -60,11 +60,7 @@
     <bean id="maintenanceRequest" class="src.main.java.FacilitySystem.model.MaintenanceRequest" scope="prototype">
         <property name="maintenances">
             <list/>
-            <!-- uncomment these lines if you want to create a list with NULL object of type OrderDetail
-             <list>
-                 <ref bean="orderDetail" />
-            </list>
-            -->
+
         </property>
     </bean>
 

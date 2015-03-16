@@ -89,17 +89,5 @@ public class FacilitySystemClient {
 
        // FacilityService facilityService1 = new FacilityService();
         //facilityService1.getFacilities();
-
-        Class.forName("com.mysql.jdbc.Driver");
-
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/FacilitySystem","root","jeelpatel");
-        PreparedStatement statement = connection.prepareStatement("SELECT * from person");
-
-        ResultSet set = statement.executeQuery();
-
-        while(set.next())
-        {
-            System.out.println(set.getString(4)+ " "+ set.getString(5)+ " "+set.getString(6));
-        }
     }
 }

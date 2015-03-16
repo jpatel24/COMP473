@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a86473-40de-4c07-81b5-3bf8ce4039f4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config.xml" afterPath="$PROJECT_DIR$/src/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FacilityManagementSystem.iws" />
@@ -824,7 +823,7 @@
       <workItem from="1424055376058" duration="6053000" />
       <workItem from="1424109129485" duration="1556000" />
       <workItem from="1424117294573" duration="205000" />
-      <workItem from="1426485551419" duration="1971000" />
+      <workItem from="1426485551419" duration="1998000" />
     </task>
     <task id="LOCAL-00001" summary="random.txt">
       <created>1423160372831</created>
@@ -868,15 +867,21 @@
       <option name="project" value="LOCAL" />
       <updated>1426486693453</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changed typo">
+      <created>1426529210909</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1426529210909</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57548000" />
+    <option name="totallyTimeSpent" value="57575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -935,7 +940,8 @@
     <MESSAGE value="Used MYSQL database. Got rid of hibernate.cfg.xml file. &#10;Added multiple Jars. Implemented FacilityDAO and MaintenanceDAO as well as FacilityService and MaintenanceService." />
     <MESSAGE value="uml diagram&#10;" />
     <MESSAGE value="added Spring configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Spring configurations" />
+    <MESSAGE value="changed typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed typo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

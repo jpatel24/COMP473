@@ -6,6 +6,7 @@ import src.main.java.FacilitySystem.*;
 import src.main.java.FacilitySystem.model.*;
 import src.main.java.FacilitySystem.service.FacilityService;
 import src.main.java.FacilitySystem.service.MaintenanceService;
+import src.main.java.FacilitySystem.dal.FacilityHibernateDAO;
 import sun.applet.Main;
 
 import java.lang.reflect.Array;
@@ -19,7 +20,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
- * Created by Jeel on 2/14/15.
+ * Created by Jeel and Ethan on 2/14/15.
  */
 public class FacilitySystemClient {
 
@@ -27,67 +28,46 @@ public class FacilitySystemClient {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
 
-        //FacilityService facilityService = new FacilityService();
         FacilityService facilityService = (FacilityService) context.getBean("facilityService");
-        //MaintenanceService maintenanceService = new MaintenanceService();
         MaintenanceService maintenanceService = (MaintenanceService) context.getBean("maintenanceService");
-        //Person person = new Person();
         Person person = (Person) context.getBean("owner");
+
         person.setAge(23);
         person.setFirstName("Jeel");
         person.setLastName("Patel");
 
-        //Facility facility1 = new Facility();
         Facility facility1 = (Facility) context.getBean("facility");
+        facility1.setId(2);
         facility1.setCost(700);
         facility1.setDescription("Admissons and Registras  ");
         facility1.setVacant(false);
         facility1.setOwner(person);
-       // facilityService.addFacility(facility1);
 
-
-        Calendar calendar = new GregorianCalendar();
-
-        //Use use = new Use();
         Use use = (Use) context.getBean("use");
         use.setFacility(facility1);
         use.setUseDescription("Filing records");
-       // use.setStartDate(calendar.set(2004,5,13));
         use.setUseId(2);
 
-        //List<Maintenance> maintenanceList = new ArrayList<Maintenance>();
         List<Maintenance> maintenanceList = (ArrayList<Maintenance>) context.getBean("maintenanceList");
-        //MaintenanceRequest maintenanceRequest = new MaintenanceRequest();
         MaintenanceRequest maintenanceRequest = (MaintenanceRequest) context.getBean("maintenanceRequest");
         maintenanceRequest.setFacility(facility1);
         maintenanceRequest.setCurrent(true);
         maintenanceRequest.setEstCost(50);
         maintenanceRequest.setMaintenances(maintenanceList);
 
-        //Maintenance maintenance = new Maintenance();
         Maintenance maintenance = (Maintenance) context.getBean("maintenance");
         maintenance.setDescription("Leaky faucet");
         maintenance.setCost(300);
         maintenance.setMaintenanceRequest(maintenanceRequest);
-        //maintenanceService.addMaintenance(maintenance,maintenanceRequest);
 
-        //FacilityProblems facilityProblems = new FacilityProblems();
         FacilityProblems facilityProblems = (FacilityProblems) context.getBean("facilityProblems");
         facilityProblems.setDescription("heater broken");
         facilityProblems.setCurrent(false);
         facilityProblems.setFacility(facility1);
 
-
-        System.out.println(person);
-        System.out.println(facility1);
-        System.out.println(maintenance);
-        System.out.println(maintenanceRequest);
-        System.out.println(use);
-        System.out.println(maintenanceRequest);
-        System.out.println(facilityProblems);
-
-
-       // FacilityService facilityService1 = new FacilityService();
-        //facilityService1.getFacilities();
+        facilityService.addFacility(facility1);
+        maintenanceService.addMaintenance(maintenance);
+        //facilityService.addUse(use,facility1);
+        //facilityService.addMaintenanceRequest(maintenanceRequest,facility1);
     }
 }

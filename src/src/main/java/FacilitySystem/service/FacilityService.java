@@ -1,5 +1,7 @@
 package src.main.java.FacilitySystem.service;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import src.main.java.FacilitySystem.dal.FacilityHibernateDAO;
 import src.main.java.FacilitySystem.model.Facility;
 import src.main.java.FacilitySystem.model.FacilityProblems;
@@ -14,9 +16,10 @@ import java.util.List;
  */
 public class FacilityService {
     public FacilityService(){
-    }
 
-    private FacilityHibernateDAO facilityHibernateDAO;
+    }
+    ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+    private FacilityHibernateDAO facilityHibernateDAO = (FacilityHibernateDAO) context.getBean("facilityHibernateDAO");
 
     public FacilityHibernateDAO getFacilityHibernateDAO(){
         return facilityHibernateDAO;
@@ -27,8 +30,11 @@ public class FacilityService {
     }
 
     public Facility getFacilityById(int facilityId){
+
         try {
+            System.out.println("Inside Try statement of getFacilityById");
             Facility f = facilityHibernateDAO.getFacility(facilityId);
+            System.out.println("asdfasdf");
             return f;
         } catch (Exception se) {
             System.err.println("FacilityService: Threw a Exception retrieving facility.");
@@ -39,7 +45,9 @@ public class FacilityService {
 
     public void addFacility(Facility facility) {
 
+
         try {
+            System.out.println("Inside Try statement of addFacility");
             facilityHibernateDAO.addFacility(facility);
         } catch (Exception se) {
             System.err.println("FacilityService: Threw a Exception adding facility.");

@@ -22,7 +22,7 @@ public class FacilityHibernateDAO {
             session.beginTransaction();
 
             Query getFacilityQuery = session.createQuery("From Facility where id=:facilityId");
-            getFacilityQuery.setInteger("id", facilityID);
+            //getFacilityQuery.setInteger("id", facilityID);
             System.out.println("*************** Retrieve Query is ....>>\n" + getFacilityQuery.toString());
             List facilities = getFacilityQuery.list();
             System.out.println("Getting Facilities. \n" + facilities);

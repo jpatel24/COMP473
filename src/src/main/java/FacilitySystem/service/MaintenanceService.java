@@ -1,5 +1,7 @@
 package src.main.java.FacilitySystem.service;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import src.main.java.FacilitySystem.dal.MaintenanceHibernateDAO;
 import src.main.java.FacilitySystem.model.Maintenance;
 import src.main.java.FacilitySystem.model.MaintenanceRequest;
@@ -10,7 +12,9 @@ import src.main.java.FacilitySystem.model.MaintenanceRequest;
 public class MaintenanceService {
     public MaintenanceService(){
     }
-    private MaintenanceHibernateDAO mDAO;
+
+    ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+    private MaintenanceHibernateDAO mDAO = (MaintenanceHibernateDAO) context.getBean("maintenanceHibernateDAO");
 
     public void setMDAO(MaintenanceHibernateDAO m){
         this.mDAO = m;

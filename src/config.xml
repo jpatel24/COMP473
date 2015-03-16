@@ -35,7 +35,7 @@
     <bean id="facility" class="src.main.java.FacilitySystem.model.Facility" scope="prototype">
         <property name="owner" ref="owner"/>
         <property name="renter" ref="renter"/>
-
+        <property name="id" value="1"/>
         <property name="facilityUse">
             <list/>
         </property>
@@ -97,5 +97,11 @@
         <property name="maintenanceService" ref="maintenanceService"/>
     </bean>
 
+    <bean id="facilityHibernate" class="src.main.java.FacilitySystem.service.FacilityService" scope="prototype">
+        <property name="facilityHibernateDAO" ref="facilityHibernateDAO"/>
+    </bean>
 
+    <bean id="facilityHibernateDAO" class="src.main.java.FacilitySystem.dal.FacilityHibernateDAO"/>
+
+    <bean id="maintenanceHibernateDAO" class="src.main.java.FacilitySystem.dal.MaintenanceHibernateDAO"/>
 </beans>
